@@ -12,7 +12,7 @@ for i in range (0,len(c)):
         j+=1
 
 for i in range (len(a)):
-    b.append(int(a[i]))
+        b.append(int(a[i]))
 s=''
 for i in range(-100,101):
     if i**3*b[0]+i**2*b[1]+i*b[2]+b[3]==0:
