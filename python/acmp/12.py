@@ -3,3 +3,4 @@ a=[]
 for i in range(n):
     a=list(map(int,input().split()))
     x=a.pop(0)
+    y=a.pop(0)
