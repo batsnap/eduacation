@@ -16,6 +16,6 @@ for i in range (n):
    x,y,x1,y1,x2,y2,x3,y3,x4,y4=map(int,input().split())
    s0=vector(x1,y1,x2,y2)*vector(x2,y2,x3,y3)
    s1=streyg(x,y,x1,y1,x2,y2)+streyg(x,y,x2,y2,x3,y3)+streyg(x,y,x3,y3,x4,y4)+streyg(x,y,x1,y1,x4,y4)
-   if round(s1)==s0:
+   if round(s1)==round(s0):
       k+=1
 print(k)
