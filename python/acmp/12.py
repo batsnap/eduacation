@@ -1,18 +1,21 @@
-from math import sqrt,pi,acos
+from math import sqrt
 def vector(x1,y1,x2,y2:int):
-   x3=abs(x1-x2)
-   y3=abs(y1-y2)
-   return sqrt(x3**2+y3**2)
-print(2*pi)
-s=0
+   x3=abs(x2-x1)
+   y3=abs(y2-y1)
+   s=sqrt(x3**2+y3**2)
+   return s
+def streyg(x,y,x1,y1,x2,y2:int):
+   p=(vector(x,y,x1,y1)+vector(x,y,x2,y2)+vector(x1,y1,x2,y2))/2
+   s=sqrt(p*(p-vector(x,y,x1,y1))*(p-vector(x,y,x2,y2))*(p-vector(x1,y1,x2,y2)))
+   return s
 n=int(input())
-for i in range(n):
+s0=0
+s1=0
+k=0
+for i in range (n):
    x,y,x1,y1,x2,y2,x3,y3,x4,y4=map(int,input().split())
-   s1=acos((vector(x,y,x1,y1)**2+vector(x,y,x2,y2)**2-vector(x1,y1,x2,y2)**2)/(2*vector(x,y,x1,y1)*vector(x,y,x2,y2)))
-   s2=acos((vector(x,y,x3,y3)**2+vector(x,y,x2,y2)**2-vector(x3,y3,x2,y2)**2)/(2*vector(x,y,x3,y3)*vector(x,y,x2,y2)))
-   s3=acos((vector(x,y,x3,y3)**2+vector(x,y,x4,y4)**2-vector(x3,y3,x4,y4)**2)/(2*vector(x,y,x3,y3)*vector(x,y,x4,y4)))
-   s4=acos((vector(x,y,x1,y1)**2+vector(x,y,x4,y4)**2-vector(x1,y1,x4,y4)**2)/(2*vector(x,y,x1,y1)*vector(x,y,x4,y4)))
-   print(s1+s2+s3+s4)
-   if (s1+s2+s3+s4)<2*pi:
-      s+=1
-print(s)
+   s0=vector(x1,y1,x2,y2)*vector(x2,y2,x3,y3)
+   s1=streyg(x,y,x1,y1,x2,y2)+streyg(x,y,x2,y2,x3,y3)+streyg(x,y,x3,y3,x4,y4)+streyg(x,y,x1,y1,x4,y4)
+   if round(s1)==s0:
+      k+=1
+print(k)
