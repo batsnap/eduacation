@@ -1,6 +1,6 @@
 a=list(map(int,input().split()))
 a.pop()
-a.append(x)
+a.append()
 
 
 
