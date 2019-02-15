@@ -34,3 +34,4 @@ else:
          else:
             a[i][j-1]=max(a[i-1][j-1],a[i-1][j])
 print(a[n-1][0])
+a
