@@ -19,4 +19,5 @@ for i in range(n*3):
 for i in range(3):
    slova[i]=(k.pop(maxid(c)))
    count[i]=(c.pop(maxid(c)))
-print(slova,count)
+for i in range(3):
+   print(slova[i])
