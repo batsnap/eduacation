@@ -13,9 +13,9 @@ c=[]
 slova=['']*3
 count=[0]*3
 for i in range(n*3):
-    a,b=map(str,input().split())
-    k.append(a)
-    c.append(int(b))
+   a,b=map(str,input().split())
+   k.append(a)
+   c.append(int(b))
 for i in range(3):
    slova[i]=(k.pop(maxid(c)))
    count[i]=(c.pop(maxid(c)))
