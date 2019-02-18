@@ -1,7 +1,7 @@
 var a,b,c:integer;
 function isleapyear(a:integer):boolean;
     begin
-        if ((a mod 4=0) and ((a mod 100<>0) and (a mod 400<>0))) or ((a mod 4=0) and ((a mod 100=0) and (a mod 400=0)))then
+        if (a mod 4=0) and (a mod 100<>0) or (a mod 400=0) then
             isleapyear:=true
         else
             isleapyear:=false;
@@ -54,6 +54,8 @@ procedure prevdate(d,m,y:integer);
             end;
     end;
 begin
-readln(a,b,c);
-prevdate(a,b,c);
+//readln(a,b,c);
+readln(a);
+//prevdate(a,b,c);
+write(isleapyear(a));
 end.
