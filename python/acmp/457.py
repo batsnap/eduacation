@@ -18,8 +18,12 @@ def kaprikar(x:int):
 n=int(input())
 i=0
 while kaprikar(n)!=6174:
-   x=kaprikar(n)
+   n=kaprikar(n)
    i+=1
 print(6174)
-print(i)
-kakka
+if i==0:
+   print(0)
+elif i==7:
+   print(7)
+else:
+   print(i+1)
