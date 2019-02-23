@@ -11,7 +11,7 @@ while i < 1200000000 - 2 and fib_sum<n and fib_sum!=n:
     fib2 = fib_sum
     i = i + 1
 if fib_sum==n:
-   print(1)
-   print(i+2)
+    print(1)
+    print(i+2)
 else:
-   print(0)
+    print(0)
