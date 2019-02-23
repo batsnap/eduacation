@@ -23,7 +23,5 @@ while kaprikar(n)!=6174:
 print(6174)
 if i==0:
    print(0)
-elif i==7:
-   print(7)
 else:
    print(i+1)
