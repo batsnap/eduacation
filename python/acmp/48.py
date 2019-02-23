@@ -1,16 +1,10 @@
-import math
-def IsPrime(n):
-   if (math.factorial(n - 1) + 1) % n != 0:  # Теорема Вильсона
-      return False
-   else:
-      return True
-n=int(input())
-k=10**(len(str(n))-1)
-IsPrime(n)
-if n%k==0:
-   print(k)
-elif IsPrime(n):
-   print(1)
-else:
-   print(n)
-
+n=str(input())
+j=len(n)-1
+while n[j]=='0':
+   j-=1
+j=len(n)-j-1
+k='1'
+while j>0:
+   k=k+'0'
+   j-=1
+print(k)
