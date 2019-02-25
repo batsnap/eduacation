@@ -15,13 +15,15 @@ def kaprikar(x:int):
    m.reverse()
    a=int(str(m[0])+str(m[1])+str(m[2])+str(m[3]))
    return a-x
+
 n=int(input())
 i=0
+l=n
 while kaprikar(n)!=6174:
    n=kaprikar(n)
    i+=1
 print(6174)
-if i==0:
+if l==6174:
    print(0)
 else:
    print(i+1)
