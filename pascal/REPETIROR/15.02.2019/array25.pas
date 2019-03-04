@@ -17,3 +17,4 @@ if (n=1) then
 else
     write(0)
 end.
+
