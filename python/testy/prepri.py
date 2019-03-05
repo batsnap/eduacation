@@ -127,7 +127,7 @@ newlist = list()
 for i in a.keys():
    newlist.append(i)
 while x!='0':
-   c=randint(1,85)
+   c=randint(1,118)
    print(newlist[c])
    k=a.get(newlist[c])
    x=str(input())
