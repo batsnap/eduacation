@@ -1,11 +1,11 @@
 w,h=map(int,input().split())
 n=int(input())
 a=[]
-for i in range (100):
-   for j in range(100):
+for i in range (w):
+   for j in range(h):
       a.append([])
-for i in range (100):
-   for j in range(100):
+for i in range (w):
+   for j in range(h):
       a[i].append(0)
 s=0
 s1=w*h
@@ -14,6 +14,7 @@ for i in range(n):
 	for i in range(y1,y2):
 		for j in range(x1,x2):
 			a[j][i]=1
-for i in range(100):
-	s=s+sum(a[i])
+for i in range(w):
+	for j in range(h):
+		s=s+a[i][j]
 print(s1-s)
