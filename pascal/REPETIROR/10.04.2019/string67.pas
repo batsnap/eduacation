@@ -1,14 +1,12 @@
 var
-   i,k:longint;
+   i:longint;
    slovo,itog:string;
 begin
-k:=0;
 itog:='';
 readln(slovo);
 for i:=1 to length(slovo) div 2 do
    begin
-      itog:=itog+slovo[length(slovo)-k]+slovo[i];
-      k+=1;
+      itog:=itog+slovo[length(slovo)-i+1]+slovo[i];
    end;
 writeln(itog)
 end.
