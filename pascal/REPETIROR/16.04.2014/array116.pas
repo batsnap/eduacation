@@ -1,31 +1,31 @@
 var
    i,n,k,l:integer;
-   a:array  of integer;
-   c:array [1..10] of integer;
-   b:array [1..10] of integer;
+   a:array of integer;
+   c:array of integer;
+   b:array of integer;
 begin
-k:=1;
-l:=2;
 readln(n);
+k:=0;
 setlength(a,n);
-for i:=0 to n-1 do
+setlength(b,1);
+setlength(c,1);
+c[0]:=1;
+for i:=0 to (n-1) do 
    readln(a[i]);
-for i:=1 to (n-2) do
+for i:=1 to n-1 do
    if a[i]=a[i-1] then
       begin
-         
-         c[k]:=a[i-1];
-         b[k]:=l;
-         l+=1;
+         b[k]:=a[i];
+         c[k]:=c[k]+1;
       end
    else
-      begin
-         k+=1;
-         l:=1;
-         c[k]:=a[i+1];
-         b[i]:=l;
-      end;
-writeln('b:',b);
-writeln('c:',c);
-
+   begin
+      k+=1;
+      setlength(b,k+1);
+      setlength(c,k+1);
+      b[k]:=a[i];
+      c[k]:=1;
+   end;
+writeln('b:',c);
+writeln('c:',b);
 end.
