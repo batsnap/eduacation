@@ -26,6 +26,7 @@ GridLayout:
    BoxLayout:
       GridLayout:
          cols:3
+
          Button:
             text:"e"
          Button:
