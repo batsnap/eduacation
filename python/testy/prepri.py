@@ -200,10 +200,7 @@ while x!='0':
    k=a.get(newlist[c])
    x=str(input())
    while x!=k:
-     print('не правильно')
-     x=str(input())
-   print('правиьно')
-   print('-----------------------------')
+      x=str(input())
 
 
 
