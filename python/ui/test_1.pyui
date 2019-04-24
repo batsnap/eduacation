@@ -1,0 +1,171 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 396}, {80, 84}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "but",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "а",
+          "uuid" : "BBADB6A5-DB1F-4E7D-AF9D-12050D150B24",
+          "class" : "Button",
+          "name" : "button1",
+          "font_size" : 15
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{79, 396}, {80, 84}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "but",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "я",
+          "class" : "Button",
+          "uuid" : "BBADB6A5-DB1F-4E7D-AF9D-12050D150B24",
+          "font_size" : 15,
+          "name" : "button1"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{159, 396}, {80, 84}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "but",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "ы",
+          "class" : "Button",
+          "uuid" : "BBADB6A5-DB1F-4E7D-AF9D-12050D150B24",
+          "font_size" : 15,
+          "name" : "button1"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{240, 396}, {80, 84}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "but",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "о",
+          "class" : "Button",
+          "uuid" : "BBADB6A5-DB1F-4E7D-AF9D-12050D150B24",
+          "font_size" : 15,
+          "name" : "button1"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{159, 313.5}, {80, 84}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "but",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "и",
+          "class" : "Button",
+          "uuid" : "BBADB6A5-DB1F-4E7D-AF9D-12050D150B24",
+          "font_size" : 15,
+          "name" : "button1"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{88, 313.5}, {80, 84}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "but",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "е",
+          "class" : "Button",
+          "uuid" : "BBADB6A5-DB1F-4E7D-AF9D-12050D150B24",
+          "font_size" : 15,
+          "name" : "button1"
+        },
+        "selected" : true
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 0}, {320, 64}}",
+        "class" : "Label",
+        "attributes" : {
+          "name" : "label1",
+          "frame" : "{{85, 224}, {150, 32}}",
+          "uuid" : "76489CA2-EB3B-4646-921B-ABD3DCA44F66",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Слова",
+          "font_size" : 18,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 72}, {320, 70}}",
+        "class" : "Label",
+        "attributes" : {
+          "name" : "label2",
+          "frame" : "{{85, 224}, {150, 32}}",
+          "uuid" : "BD4315DF-85EA-47CD-B89B-B86CCEE731A3",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Ошибки:",
+          "font_size" : 18,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{95, 210}, {144, 53}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "start",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "Старт\/Стоп",
+          "uuid" : "A734D322-C2F4-427C-8FFA-57F88DF798EC",
+          "class" : "Button",
+          "name" : "button2",
+          "font_size" : 15
+        },
+        "selected" : false
+      }
+    ],
+    "frame" : "{{0, 0}, {320, 480}}",
+    "class" : "View",
+    "attributes" : {
+      "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]
