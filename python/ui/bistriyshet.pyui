@@ -1,16 +1,105 @@
 [
-    {
-        "class": "View",
-        "attributes": {
-            "background_color": "RGBA(1.000000,1.000000,1.000000,1.000000)",
-            "tint_color": "RGBA(0.000000,0.478000,1.000000,1.000000)",
-            "enabled": true,
-            "border_color": "RGBA(0.000000,0.000000,0.000000,1.000000)",
-            "flex": ""
-        },
-        "frame": "{{0, 0}, {240, 240}}",
-        "nodes": [
+  {
+    "nodes" : [
+      {
+        "nodes" : [
 
-        ]
-    }
+        ],
+        "frame" : "{{0, 0}, {320, 57}}",
+        "class" : "Label",
+        "attributes" : {
+          "name" : "label1",
+          "frame" : "{{85, 224}, {150, 32}}",
+          "uuid" : "2047BEB9-F1E4-4753-BCA0-A2568B6F627E",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Label",
+          "font_size" : 18,
+          "font_name" : "<System>"
+        },
+        "selected" : true
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{60, 356}, {214, 124}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "start",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "Start",
+          "uuid" : "B25A73DF-4824-46CE-8799-B4CAA3B2A1D2",
+          "class" : "Button",
+          "name" : "button1",
+          "font_size" : 15
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{110, 282}, {80, 32}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "next",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "Next",
+          "uuid" : "4019CECE-DC3F-49E1-8FDF-795ED38BB27A",
+          "class" : "Button",
+          "name" : "button2",
+          "font_size" : 15
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 58.5}, {320, 57}}",
+        "class" : "Label",
+        "attributes" : {
+          "font_name" : "<System>",
+          "frame" : "{{85, 224}, {150, 32}}",
+          "uuid" : "2047BEB9-F1E4-4753-BCA0-A2568B6F627E",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Label",
+          "name" : "label2",
+          "font_size" : 18
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{60, 209}, {200, 47}}",
+        "class" : "TextField",
+        "attributes" : {
+          "name" : "textfield1",
+          "frame" : "{{60, 224}, {200, 32}}",
+          "spellchecking_type" : "default",
+          "class" : "TextField",
+          "uuid" : "372CC3D0-D6FB-4808-82D6-AE2677BFEFB2",
+          "alignment" : "left",
+          "autocorrection_type" : "default",
+          "font_size" : 17,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      }
+    ],
+    "frame" : "{{0, 0}, {320, 480}}",
+    "class" : "View",
+    "attributes" : {
+      "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
 ]

@@ -1,6 +1,7 @@
 import ui
-from random import randit
+from random import randint
 from time import time
+import sqlite3 as lite
 #Глобальные переменные
 time1=0
 time2=0
@@ -15,23 +16,25 @@ cur = con.cursor()
 def start(sender):
    global primer,time1,x
    time1=time()
-   primer=str(randit(-100,100))+znaki[randit(0,2)]+str(randit(-100,100))
-   lable=sneder.superview['lable1']
+   primer='('+str(randint(-100,100))+')'+znaki[randint(0,2)]+'('+str(randint(-100,100))+')'
+   lable=sender.superview['label1']
    lable.text=primer
 #Кнопка следующий пример и отправка ответа
 def next(sender):
    global primer,time2,x,osh
-   otvet=sneder.superview['textfield1']
-   lable=sneder.superview['lable1']
+   otvet=sender.superview['textfield1']
+   lable=sender.superview['label1']
+   lable1=sender.superview['label2']
    if x!=5:
       x+=1
-      if int(otvet)!=eval(primer):
+      if otvet!=eval(primer):
          osh+=1
       otvet.text=''
-      primer=str(randit(-100,100))+znaki[randit(0,2)]+str(randit(-100,100))
+      primer='('+str(randint(-100,100))+')'+znaki[randint(0,2)]+'('+str(randint(-100,100))+')'
       lable.text=primer
    else:
       time2=time()
-
+      lable.text='Пример'
+			lable1.text='Ошибки:'
 v = ui.load_view()
 v.present('sheet')
