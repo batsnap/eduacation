@@ -13,17 +13,17 @@
           "uuid" : "2047BEB9-F1E4-4753-BCA0-A2568B6F627E",
           "class" : "Label",
           "alignment" : "left",
-          "text" : "Label",
+          "text" : "Пример",
           "font_size" : 18,
           "font_name" : "<System>"
         },
-        "selected" : true
+        "selected" : false
       },
       {
         "nodes" : [
 
         ],
-        "frame" : "{{60, 356}, {214, 124}}",
+        "frame" : "{{0, 366}, {320, 114}}",
         "class" : "Button",
         "attributes" : {
           "action" : "start",
@@ -40,7 +40,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{110, 282}, {80, 32}}",
+        "frame" : "{{6, 282}, {314, 32}}",
         "class" : "Button",
         "attributes" : {
           "action" : "next",
@@ -65,7 +65,7 @@
           "uuid" : "2047BEB9-F1E4-4753-BCA0-A2568B6F627E",
           "class" : "Label",
           "alignment" : "left",
-          "text" : "Label",
+          "text" : "Ошибки",
           "name" : "label2",
           "font_size" : 18
         },

@@ -35,6 +35,6 @@ def next(sender):
    else:
       time2=time()
       lable.text='Пример'
-			lable1.text='Ошибки:'
+      lable1.text='Ошибки:'+str(osh)
 v = ui.load_view()
 v.present('sheet')
