@@ -1,14 +1,9 @@
 # -*- coding: utf-8 -*-
 import sqlite3
-conn = sqlite3.connect('./my.sqlite')
+conn = sqlite3.connect('./rez.sqlite')
 c = conn.cursor()
-try:
-   c.execute('CREATE TABLE PrePri (Words TEXT,Letters TEXT)')
-except:
-   pass
-l=[]
-for i in range (185):
-   c.execute('INSERT INTO PrePri VALUES(?,?)',l)
+c.execute('CREATE TABLE rez (Time REAL ,osh INTEGER)')
+
    
 conn.commit()
 c.close()
