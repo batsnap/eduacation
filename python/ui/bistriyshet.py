@@ -9,6 +9,7 @@ primer=0
 x=0
 osh=0
 znaki=['-','+','*']
+rez=[]
 #подключаемся к базе данных
 con = lite.connect('./rez.sqlite')
 cur = con.cursor()    
@@ -21,7 +22,7 @@ def start(sender):
    lable.text=primer
 #Кнопка следующий пример и отправка ответа
 def next(sender):
-   global primer,time2,x,osh
+   global primer,time2,x,osh,rez
    otvet=sender.superview['textfield1']
    lable=sender.superview['label1']
    lable1=sender.superview['label2']
@@ -33,8 +34,12 @@ def next(sender):
       primer='('+str(randint(-100,100))+')'+znaki[randint(0,2)]+'('+str(randint(-100,100))+')'
       lable.text=primer
    else:
+      
       time2=time()
+      rez.append(int(time2-time1))
+      rez.append(osh)
       lable.text='Пример'
       lable1.text='Ошибки:'+str(osh)
+      cursor.execute("INSERT INTO rez VALUES (?,?)", rez)
 v = ui.load_view()
 v.present('sheet')
