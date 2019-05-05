@@ -10,12 +10,12 @@ procedure Smooth2(mas:ar;n:integer);
         sum:real;
         i:integer;
     begin
-        sum:=a[0];
+        sum:=mas[0];
         for i:=1 to n-1 do
             begin
-                sum+=a[i];
-                a[i]:=sum/2;
-                sum-=a[i-1];
+                sum+=mas[i];
+                mas[i]:=sum/2;
+                sum-=mas[i-1];
             end;
 
     end;
