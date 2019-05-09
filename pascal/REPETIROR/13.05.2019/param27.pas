@@ -6,16 +6,16 @@ var
     j,i,m,n,k3,k4:integer;
     test:ar;
 procedure sdvig(var a:ar;k1,k2:integer);
-    var
-        i,j:integer;
+    var 
+        i,j,s:integer;
+        
     begin
-        j:=0;
-        for i:=k1-1 to k2-1 do
+        for j:=1 to k2-k1+1 do
             begin
-                a[k1]:=a[k2-1+j];
-                j+=1;
+                for i:=k1-1 to length(a)-2 do
+                    a[i]:=a[i+1];
+                setlength(a,length(a)-1)
             end;
-        setlength(a,n-(k2-k1));
     end;
 procedure zapolnenie(var mat:matrix;m,n:integer);
     var
@@ -37,7 +37,7 @@ procedure outmat(var a:matrix;m,n:integer);
     begin
         for i:=0 to m-1 do
         begin
-            for j:=0 to n-1 do
+            for j:=0 to length(a[0])-1 do
                 write(mat[i,j]:3,' ');
             writeln();
         end;
@@ -61,16 +61,11 @@ procedure RemoveCols(var a:matrix;m,n,k1,k2:integer);
     end;
 
 begin
-    setlength(test,5);
-    for i:=0 to 4 do
-        test[i]:=real(i);
-    writeln(test);
-    {readln(m,n);}
+    readln(m,n);
     readln(k3,k4);
-    sdvig(test,k3,k4);
-    {zapolnenie(mat,m,n);
+    zapolnenie(mat,m,n);
     outmat(mat,m,n);
     writeln();
-    RemoveCols(mat,m,n,k1,k2);
-    outmat(mat,m,n);}
+    RemoveCols(mat,m,n,k3,k4);
+    outmat(mat,m,n);
 end.
