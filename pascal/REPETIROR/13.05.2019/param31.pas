@@ -18,7 +18,5 @@ begin
     x:=true;
     readln(s1);
     readln(n);
-    repeat
-        writeln(fillstr(s1,n))
-    until x=false;
+    writeln(fillstr(s1,n))
 end.

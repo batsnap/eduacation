@@ -3,8 +3,7 @@ type
     ar=array of real;
 var
     mat:matrix;
-    j,i,m,n,k3,k4:integer;
-    test:ar;
+    i,m,n,k3,k4:integer;
 procedure sdvig(var a:ar;k1,k2:integer);
     var 
         i,j,s:integer;
