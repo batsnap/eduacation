@@ -1,4 +1,4 @@
-from random import randint
+from random import randint%
 n=int(input())
 s=0.0
 x=0
