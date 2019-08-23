@@ -17,7 +17,10 @@ class myclass{
 };
 int main(){
     myclass a;
-    a.getName("batyr");
+    string s;
+    cin>>s;
+    cout<<"----------------------------------------"<<endl;
+    a.getName(s);
     cout<<a.outName()<<endl;
     return 0;
 }
