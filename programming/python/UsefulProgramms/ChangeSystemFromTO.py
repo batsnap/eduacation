@@ -13,6 +13,8 @@ def changeFromTo(x,sis1,sis2):
         else:
             itog+=num[s%sis2]
             s//=sis2
-    print(itog[::-1])
-
-changeFromTo('1AC6',16,15)
+    print('Итоговое число:',itog[::-1])
+x=str(input('Введите число:'))
+sis1=int(input('Введите систему счисление числа:'))
+sis2=int(input('Введите систему счисление числа конечного:'))
+changeFromTo(x,sis1,sis2)
