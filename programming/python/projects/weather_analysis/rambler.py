@@ -1,16 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 
-def get_html(url):
+def get_html():
+    url='https://weather.rambler.ru/v-moskve/now/'
     r=requests.get(url)
-    return r.text
-def get_temp(html):
+    r=r.text
+    return r
+def get_temp():
+    html=get_html()
     soup=BeautifulSoup(html,'lxml')
     temp=soup.select('div._1HBR')
     txt=temp[0].get_text()
     return '+'+txt[0]+txt[1]
-def main():
-    url='https://weather.rambler.ru/v-moskve/now/'
-    html=get_html(url)
-    return get_temp(html)
-#main()
