@@ -1,21 +1,26 @@
-import mail
-import rambler
-import yandex
-import weather
-import bbc
-import wunderground
+import rambler, yandex,weather,bbc, wunderground,mail
 
-a=int(yandex.get_temp())
-b=int(rambler.get_temp())
-c=int(mail.get_temp())
-d=int(weather.get_temp())
-g=int(bbc.get_temp())
+#Прием данных из подпрограмм
+a=yandex.get_temp()
+b=rambler.get_temp()
+c=mail.get_temp()
+d=weather.get_temp()
+g=bbc.get_temp()
 e=(int(wunderground.get_temp())-32)*(5/9)
 
-print('yandex:',a)
-print('rambler:',b)
-print('mail:',c)
-print('weather:',d)
-print('bbc:',g)
-print('wunderground:',e)
-print('Средняя температура после долгого анализа:',str((a+b+c+d+g)/5))
+#Температура
+ItogTemp=(int(a[0])+int(b[0])+int(c[0])+int(d[0])+int(g[0])+e)/6
+print('Температура после долгого анализа:',ItogTemp)
+
+#Давление
+ItogBar=(int(a[2])+int(b[2])+int(c[2])+float(d[2])+float(g[2]))/5
+print('Давление после долгого анализа:',ItogBar)
+
+#Скорость ветра
+ItogWind=(float(a[4])+int(b[4])+float(c[4])+float(d[4])+float(g[4]))/5
+print('Скорость ветра после долгого анализа:',ItogWind)
+
+#Влажность
+ItogWet=(float(a[6])+float(c[6])+float(d[6])+float(g[6]))/4
+print('Влажнность после долгого анализа:',ItogWet)
+

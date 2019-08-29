@@ -6,6 +6,7 @@ def get_html():
     r=requests.get(url)
     r=r.text
     return r
+    
 def get_temp():
     html=get_html()
     soup=BeautifulSoup(html,'lxml')
