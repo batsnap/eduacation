@@ -32,12 +32,17 @@ def get_temp():
     cif='0123456789'
     txt41=''
     txt4=all[67].get_text()
-    for i in range(len(txt4)):
-        if txt4[i] in cif:
-            txt41+=txt4[i]
-    txt4=str(int(txt41)/3.2)
+    if txt4=='Штиль':
+        txt4='0'
+    else:
+        for i in range(len(txt4)):
+            if txt4[i] in cif:
+                txt41+=txt4[i]
+        txt4=str(float(txt41)/3.2)
+    
 
     #Записываем все в массим для удобства
     itog=[txt1,' ',txt3,' ',txt4,' ',txt2]
 
     return(itog)
+get_temp()

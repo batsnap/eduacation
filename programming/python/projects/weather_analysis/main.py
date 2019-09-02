@@ -17,10 +17,10 @@ ItogBar=(int(a[2])+int(b[2])+int(c[2])+float(d[2])+float(g[2]))/5
 print('Давление после долгого анализа:',ItogBar)
 
 #Скорость ветра
+#https://meteoinfo.ru/bofort
 ItogWind=(float(a[4])+int(b[4])+float(c[4])+float(d[4])+float(g[4]))/5
 print('Скорость ветра после долгого анализа:',ItogWind)
 
 #Влажность
 ItogWet=(float(a[6])+float(c[6])+float(d[6])+float(g[6]))/4
 print('Влажнность после долгого анализа:',ItogWet)
-
