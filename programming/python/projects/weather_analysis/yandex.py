@@ -20,6 +20,10 @@ def get_temp():
     all=soup.select('dd.term__value')
     txt2=all[2].get_text()
     txt2=txt2[0]+'.'+txt2[2]
+    if txt2=='Ш.и':
+        txt2='0'
+    else:
+        txt2=txt2[0]+'.'+txt2[2]
 
     #Влажность
     txt3=all[3].get_text()
