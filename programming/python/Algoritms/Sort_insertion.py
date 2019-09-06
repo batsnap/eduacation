@@ -11,11 +11,14 @@ def Sort_insertion(nums):
         while j >= 0 and nums[j] > item_to_insert:
             nums[j + 1] = nums[j]
             j -= 1
+            print(i,j,' ',nums)
         # Вставляем элемент
         nums[j + 1] = item_to_insert
+
 
 # Проверяем, что оно работает
 n=int(input())
 a = [randint(0,100) for i in range(n)] 
+print('Start',a)
 Sort_insertion(a)  
-print(a) 
+print('finish',a) 

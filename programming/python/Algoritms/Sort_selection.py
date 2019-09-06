@@ -1,7 +1,7 @@
 from random import randint
 
 def Sort_selection(nums):  
-    # Значение i соответствует кол-ву отсортированных значений
+	# Значение i соответствует кол-ву отсортированных значений
     for i in range(len(nums)):
         # Исходно считаем наименьшим первый элемент
         lowest_value_index = i
