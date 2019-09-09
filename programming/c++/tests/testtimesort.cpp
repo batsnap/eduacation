@@ -88,36 +88,34 @@ void selection_sort(int a[], int n)
 int main()
 {
     srand(time(NULL));
-    int n,s;
-    n=-1;
-    while (n<=0)
-    {
-        cin>>n;
-    }
+    double s1,s2,s3,s4,time1;
+    s1=s2=s3=s4=0;
+    int n=1000;
+    int s=10000;
     int a[n];
-    for(int i=0; i<n; i++) 
+    for(int i=0;i<s;i++)
     {
-        a[i]=rand()%1000;
+        for(int j=0; j<n; j++)
+        {
+            a[j]=rand()%1000;
+        }
+        time1=clock();
+        qsort(a,0,n);
+        s1+=(clock()-time1)/1000.0;
+        time1=clock();
+        bubble_sort(a,n);
+        s2+=(clock()-time1)/1000.0;
+        time1=clock();
+        selection_sort(a,n);
+        s3+=(clock()-time1)/1000.0;
+        time1=clock();
+        insertion_sort(a,n);
+        s4+=(clock()-time1)/1000.0;
+        cout<<i<<endl;
     }
-    double start_time1=clock();
-    qsort(a,0,n);
-    double end_time1=clock();
-    double search_time1=(end_time1-start_time1)/100000.0;
-    cout<<"qsort:"<<search_time1<<endl;
-    double start_time3=clock();
-    insertion_sort(a,n);
-    double end_time3=clock();
-    double search_time3=(end_time3-start_time3)/100000.0;
-    cout<<"insertion_sort:"<<search_time3<<endl;
-    double start_time4=clock();
-    selection_sort(a,n);
-    double end_time4=clock();
-    double search_time4=(end_time4-start_time4)/100000.0;
-    cout<<"selction_sort:"<<search_time4<<endl;
-    double start_time2=clock();
-    bubble_sort(a,n);
-    double end_time2=clock();
-    double search_time2=(end_time2-start_time2)/100000.0;
-    cout<<"bubble_sort:"<<search_time2<<endl;
+    cout<<"Qsort:"<<s1/float(s)<<endl;
+    cout<<"Bsort:"<<s2/float(s)<<endl;
+    cout<<"Ssort:"<<s3/float(s)<<endl;
+    cout<<"Isort:"<<s4/float(s)<<endl;
     return 0;
 }
