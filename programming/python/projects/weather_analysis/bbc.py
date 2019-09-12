@@ -15,8 +15,13 @@ def get_temp():
 
     #Температура
     temp=soup.select('span.wr-value--temperature--c')
-    txt1=temp[27].get_text()
-    txt1=txt1[0]+txt1[1]
+    txt1=temp[29].get_text()
+    s=''
+    i=0
+    while txt1!='°' and i<2:
+        s+=txt1[i]
+        i+=1
+    txt1=s
 
     #Давление
     bar_wet=soup.select('dd.wr-time-slot-secondary__value.gel-long-primer-bold')
@@ -36,3 +41,4 @@ def get_temp():
     itog=[txt1,' ',txt2,' ',txt3,' ',txt4]
     
     return itog
+#print(get_temp())

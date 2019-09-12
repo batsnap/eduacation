@@ -13,3 +13,4 @@ def get_temp():
     temp=soup.select('div.current-temp')
     txt=temp[0].get_text()
     return txt[0]+txt[1]
+#print(get_temp())

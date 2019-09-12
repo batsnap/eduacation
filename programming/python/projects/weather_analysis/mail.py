@@ -37,3 +37,4 @@ def get_temp():
     itog=[txt1,' ',txt3,' ',txt4,' ',txt2]
     
     return(itog)
+#print(get_temp())
