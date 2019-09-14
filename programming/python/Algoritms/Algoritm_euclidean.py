@@ -9,6 +9,7 @@ def EVKdel(a,b):
         else:
             b = b % a
     return(a+b)
+
 #Вычитанием
 def EVKvich(a,b):
     while a != b:
