@@ -29,4 +29,4 @@ def send_text(message):
     elif message.text.lower() == 'суббота':
         bot.send_message(message.chat.id,lessons.Saturday())
         
-bot.polling()
+bot.polling(none_stop=True)
