@@ -25,7 +25,14 @@ def get_temp():
 
     #Давление
     txt3=all[72].get_text()
-    txt3=txt3[0]+txt3[2]+txt3[3]+txt3[4]+'.'+txt3[6]
+    chifri='0123456789'
+    txt33=''
+    for i in range(len(txt3)):
+        if txt3[i] in chifri:
+            txt33+=txt3[i]
+        if txt3[i]==',':
+            txt33+='.'
+    txt3=txt33
     txt3=str(float(txt3)*0.750062)
 
     #Ветер
@@ -45,4 +52,4 @@ def get_temp():
     itog=[txt1,' ',txt3,' ',txt4,' ',txt2]
 
     return(itog)
-#print(get_temp())
+print(get_temp())
