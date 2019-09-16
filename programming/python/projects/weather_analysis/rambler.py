@@ -22,7 +22,6 @@ def get_temp():
     #Давление
     bar=soup.select('span._1DZh')
     txt2=bar[1].get_text()
-    print(txt2)
     txt22=''
     for i in range(len(txt2)):
         if txt2[i] in chisla:
@@ -38,4 +37,4 @@ def get_temp():
     itog=[txt1,' ',txt2,' ',txt3]
     
     return(itog)
-print(get_temp())
+#print(get_temp())
