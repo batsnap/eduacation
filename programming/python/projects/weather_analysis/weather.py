@@ -14,9 +14,14 @@ def get_temp():
     soup=BeautifulSoup(html,'lxml')
 
     #Температура
+    chifri='0123456789'
     temp=soup.select('div.today_nowcard-temp')
     txt1=temp[0].get_text()
-    txt1=txt1[0]+txt1[1]
+    s=''
+    for i in range(len(txt1)):
+        if txt1[i] in chifri:
+            s+=txt1[i]
+    txt1=s
 
     #Влажность
     all=soup.select('span')
@@ -25,7 +30,6 @@ def get_temp():
 
     #Давление
     txt3=all[72].get_text()
-    chifri='0123456789'
     txt33=''
     for i in range(len(txt3)):
         if txt3[i] in chifri:

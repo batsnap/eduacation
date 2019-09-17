@@ -14,13 +14,13 @@ def get_temp():
     soup=BeautifulSoup(html,'lxml')
 
     #Температура
+    chif='01234567890'
     temp=soup.select('span.wr-value--temperature--c')
     txt1=temp[29].get_text()
     s=''
-    i=0
-    while txt1!='°' and i<2:
-        s+=txt1[i]
-        i+=1
+    for i in range(len(txt1)):
+        if txt1[i] in chif:
+            s+=txt1[i]
     txt1=s
 
     #Давление
