@@ -22,3 +22,4 @@ def weatherbot():
     ItogWet='Влажнность после долгого анализа:'+str((float(a[6])+float(c[6])+float(d[6])+float(g[6]))/4)
 
     return ItogTemp+'\n'+ItogBar+'\n'+ItogWind+'\n'+ItogWet
+print(weatherbot())

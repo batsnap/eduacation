@@ -14,9 +14,14 @@ def get_temp():
     soup=BeautifulSoup(html,'lxml')
 
     #Температура
+    chif='0123456789+-'
     temp=soup.select('div.information__content__temperature')
     txt1=temp[0].get_text()
-    txt1=txt1[1]+txt1[2]+txt1[3]
+    txt11=''
+    for i in range(len(txt1)):
+        if txt1[i] in chif:
+            txt11+=txt1[i]
+    txt1=txt11
 
     #Влажность
     wet=soup.select('div.information__content__additional__item')
@@ -37,4 +42,4 @@ def get_temp():
     itog=[txt1,' ',txt3,' ',txt4,' ',txt2]
     
     return(itog)
-#print(get_temp())
+print(get_temp())

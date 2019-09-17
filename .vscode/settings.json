@@ -5,6 +5,7 @@
     "python.linting.pep8Enabled": false,
     "files.associations": {
         "new": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "istream": "cpp"
     }
 }
