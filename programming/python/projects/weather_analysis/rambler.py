@@ -10,7 +10,7 @@ def get_html():
 
 #Берём данные температуры, влажности и давление и ложим в массив.
 def get_temp():
-    chisla='01234567890'
+    chisla='0123456789'
     html=get_html()
     soup=BeautifulSoup(html,'lxml')
 
@@ -25,7 +25,7 @@ def get_temp():
 
     #Давление
     bar=soup.select('span._1DZh')
-    txt2=bar[1].get_text()
+    txt2=bar[2].get_text()
     txt22=''
     for i in range(len(txt2)):
         if txt2[i] in chisla:
@@ -34,8 +34,12 @@ def get_temp():
 
     #Ветер
     wind=soup.select('span._1DZh')
-    txt3=wind[0].get_text()
-    txt3=txt3[6]
+    txt3=wind[1].get_text()
+    txt33=''
+    for i in range(len(txt3)):
+        if txt3[i] in chisla:
+            txt33+=txt3[i]
+    txt3=txt33
 
     #Записываем все в массим для удобства
     itog=[txt1,' ',txt2,' ',txt3]
