@@ -17,7 +17,11 @@ def get_temp():
     #Температура
     temp=soup.select('div._1HBR')
     txt1=temp[0].get_text()
-    txt1='+'+txt1[0]+txt1[1]
+    txt11=''
+    for i in range(len(txt1)):
+        if txt1[i] in chisla:
+            txt11+=txt1[i]
+    txt1=txt11
 
     #Давление
     bar=soup.select('span._1DZh')
