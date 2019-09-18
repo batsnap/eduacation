@@ -25,7 +25,7 @@ def get_temp():
 
     #Давление
     bar=soup.select('span._1DZh')
-    txt2=bar[2].get_text()
+    txt2=bar[1].get_text()
     txt22=''
     for i in range(len(txt2)):
         if txt2[i] in chisla:
@@ -34,7 +34,7 @@ def get_temp():
 
     #Ветер
     wind=soup.select('span._1DZh')
-    txt3=wind[1].get_text()
+    txt3=wind[0].get_text()
     txt33=''
     for i in range(len(txt3)):
         if txt3[i] in chisla:
