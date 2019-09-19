@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+import func
 def get_html():
     url='https://yandex.ru/pogoda/moscow'
     r=requests.get(url)
@@ -20,18 +20,13 @@ def get_temp():
     all=soup.select('dd.term__value')
     txt2=all[2].get_text()
     txt2=txt2[0]+'.'+txt2[2]
-    if txt2=='Ш.и':
-        txt2='0'
-    else:
-        txt2=txt2[0]+'.'+txt2[2]
-
     #Влажность
     txt3=all[3].get_text()
-    txt3=txt3[0]+txt3[1]
+    txt3=func.chif(txt3)
 
     #Давление
     txt4=all[4].get_text()
-    txt4=txt4[0]+txt4[1]+txt4[2]
+    txt4=func.chif(txt4)
 
     #Итог
     itog=[txt1,' ',txt4,' ',txt2,' ',txt3]

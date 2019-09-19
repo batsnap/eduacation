@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+import func
 #вытаскиваем html
 def get_html():
     url='https://weather.com/ru-RU/weather/today/l/55.75,37.58'
@@ -14,42 +14,31 @@ def get_temp():
     soup=BeautifulSoup(html,'lxml')
 
     #Температура
-    chifri='0123456789'
     temp=soup.select('div.today_nowcard-temp')
     txt1=temp[0].get_text()
-    s=''
-    for i in range(len(txt1)):
-        if txt1[i] in chifri:
-            s+=txt1[i]
-    txt1=s
+    txt1=func.chif(txt1)
 
     #Влажность
     all=soup.select('span')
     txt2=all[68].get_text()
-    txt2=txt2[0]+txt2[1]
+    txt2=func.chif(txt2)
 
     #Давление
     txt3=all[72].get_text()
+    txt3=func.chif(txt3)
     txt33=''
-    for i in range(len(txt3)):
-        if txt3[i] in chifri:
-            txt33+=txt3[i]
-        if txt3[i]==',':
-            txt33+='.'
+    for i in range(len(txt3)-1): 
+        txt33+=txt3[i]
     txt3=txt33
     txt3=str(float(txt3)*0.750062)
 
     #Ветер
-    cif='0123456789'
-    txt41=''
     txt4=all[67].get_text()
     if txt4=='Штиль':
         txt4='0'
     else:
-        for i in range(len(txt4)):
-            if txt4[i] in cif:
-                txt41+=txt4[i]
-        txt4=str(float(txt41)/3.2)
+        txt4=func.chif(txt4)
+        txt4=str(float(txt4)/3.6)
     
 
     #Записываем все в массим для удобства
