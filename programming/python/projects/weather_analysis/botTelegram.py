@@ -9,7 +9,7 @@ keyboard2.row('Weather', 'понедельник', 'вторник','среда'
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    bot.send_message(message.chat.id, 'Привет, ты написал мне /start', reply_markup=keyboard2)
+    bot.send_message(message.chat.id, 'Привет, ты написал мне /start. Это бот батыра курбанова. Он показывает погоду и расписание лекций.', reply_markup=keyboard2)
 
 @bot.message_handler(content_types=['text'])
 def send_text(message):
