@@ -19,14 +19,12 @@ def get_html():
     return r
 def get_proxy():
     f = open('proxy_list.txt', 'w')
-    html=get_html()
+    html=open('test.html').read()
     soup=BeautifulSoup(html,'lxml')
-    table=soup.find('table',id='theProxyList')
+    table=soup.find('table',class_='podbor')
     proxy=table.find_all('td')
-    for i in range(len(proxy)):
+    for i in range(6,len(proxy),5):
         text=proxy[i].get_text()
-        if len(text)>11 and len(text)<16 and check(text):
-            text2=proxy[i+1].get_text()
-            f.write(text+':'+text2+'\n')
-        
+        f.write(text+'\n')
+    f.close()
 get_proxy()
