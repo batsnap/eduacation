@@ -20,12 +20,12 @@ def get_temp():
 
     #Давление
     bar=soup.select('span._1DZh')
-    txt2=bar[1].get_text()
+    txt2=bar[2].get_text()
     txt2=func.chif(txt2)
 
     #Ветер
     wind=soup.select('span._1DZh')
-    txt3=wind[0].get_text()
+    txt3=wind[1].get_text()
     txt3=func.chif(txt3)
 
     #Записываем все в массим для удобства

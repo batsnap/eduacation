@@ -24,4 +24,4 @@ def weatherbot():
         return ItogTemp+'\n'+ItogBar+'\n'+ItogWind+'\n'+ItogWet
     except:
         return 'bug'
-#print(weatherbot()) 
+print(weatherbot()) 

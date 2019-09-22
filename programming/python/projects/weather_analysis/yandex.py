@@ -20,6 +20,7 @@ def get_temp():
     all=soup.select('dd.term__value')
     txt2=all[2].get_text()
     txt2=txt2[0]+'.'+txt2[2]
+    
     #Влажность
     txt3=all[3].get_text()
     txt3=func.chif(txt3)
@@ -32,4 +33,4 @@ def get_temp():
     itog=[txt1,' ',txt4,' ',txt2,' ',txt3]
     
     return(itog)
-print(get_temp())
+#print(get_temp())
