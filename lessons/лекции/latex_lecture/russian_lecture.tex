@@ -1,0 +1,55 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage[english,russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
+\begin{document}
+    \begin{titlepage}
+        \newpage
+        
+        \begin{center}
+        МГТУ СТАНКИН \\
+        \end{center}
+        
+        \vspace{8em}
+        
+        \begin{center}
+        \Large Кафедра информационных систем и технологий \\ 
+        \end{center}
+        
+        \vspace{2em}
+        
+        \begin{center}
+        \textsc{\textbf{Лекции}}
+        \end{center}
+        
+        \vspace{6em}
+        
+        
+        
+        \newbox{\lbox}
+        \savebox{\lbox}{\hbox{Пупкин Иван Иванович}}
+        \newlength{\maxl}
+        \setlength{\maxl}{\wd\lbox}
+        \hfill\parbox{11cm}{
+        \hspace*{5cm}\hspace*{-5cm}Студент:\hfill\hbox to\maxl{Курбанов Батыр Батырович\hfill}\\
+        \hspace*{5cm}\hspace*{-5cm}Преподаватель:\hfill\hbox to\maxl{Пупкин Иван Иванович}\\
+        \\
+        \hspace*{5cm}\hspace*{-5cm}Группа:\hfill\hbox to\maxl{ИДБ-19-06}\\}
+        
+        
+        \vspace{\fill}
+        
+        \begin{center}
+        Москва \\2019
+        \end{center}
+    
+    \end{titlepage}
+\newpage
+\begin{center}
+    \LARGE
+        Лекция 1.\\
+\end{center}
+план
+\end{document}

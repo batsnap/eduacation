@@ -21,7 +21,6 @@ def opredelitel(matrix):
         return s
     else:
         return matrix[0][0]*matrix[1][1]-matrix[0][1]*matrix[1][0]
-a=[[randint(-5,5) for i in range(4)] for j in range(4)]
-for i in range(4):
-    print(a[i])
+a=[[7,-2,-5],[-10,7,-2],[-8,-10,-3]]
+
 print('det',opredelitel(a))
