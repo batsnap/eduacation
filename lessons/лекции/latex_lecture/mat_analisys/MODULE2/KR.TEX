@@ -11,8 +11,79 @@
     \begin{center} 
         \LARGE Контрольная работа.\\
     \end{center}
-    
     \newpage
     \section{вариант}
-    1)
+    1)Является ли функция $\frac{x}{x-2}$ перевообразной для функции $\frac{-2}{(x-2)^2}$ на интревале $(2,5)$?\\
+    $f(x)=\frac{x}{x-2}$\\
+    $F(x)=\frac{x-2-x}{(x-2)^2}=\frac{-2}{(x-2)^2}$\\
+    Ответ: да является\\\\
+    2) Найти одну из перевообразных функция $cos(2x-3)$\\
+    $f(x)=cos(2x-3)$\\
+    $F(x)=\frac{1}{2}sin(2x-3)$\\\\
+    3)$\int\frac{x dx}{1-x^2}=-\frac{1}{2}\int\frac{1}{u}du=-\frac{1}{2}ln(|u|)=-\frac{1}{2}ln(|1-x^2|)+C$\\
+    $u=1-x^2$\\
+    $du=(1-x^2)'dx$ $dx=-\frac{1}{2x}du$\\\\
+    4)$\int xe^{-x}dx=-xe^{-x}-\int -e^{-x}dx=-xe^{-x}-e^{-x}+C=-(x+)e^{-x}+C$\\
+    $\int udv=uv-\int du$\\
+    $u=x$\\
+    $dx=du$\\
+    $e^{-x}dx=dv$\\
+    $v=-e^{-x}$\\\\
+    5)$\int \frac{dx}{x^2+2x+3}dx
+    =\int \frac{dx}{(x+1)^2+2}dx
+    =\frac{1}{\sqrt{2}}arctg\frac{x+1}{\sqrt{2}}+C$\\\\
+    6)$\int \frac{5x}{(x-2)(x+3)}dx
+    =\frac{2}{5}\int \frac{dx}{(x-2)}+\frac{3}{5}\int \frac{dx}{(x+3)}
+    =\frac{2}{5}ln|x-2|+\frac{3}{5}ln|x+3|+C$\\
+    $\frac{x}{(x-2)(x+3)}=\frac{A}{(x-2)}+\frac{B}{(x+3)}$\\
+    $x=A(x+3)+B(x-2)$\\
+    $x=Ax+3A+Bx-2B$\\
+    $A+B=1$\\
+    $3A-2B=0$\\
+    $A=\frac{2}{3}B$\\
+    $B=\frac{3}{5}$\\
+    $A=\frac{2}{5}$\\\\
+    7)$\int\limits_0^\pi (sin\frac{x}{3})^3 dx
+    =\int\limits_0^\pi (sin\frac{x}{3})^2(sin\frac{x}{3}) dx
+    =\int\limits_0^\pi(1-cos^2\frac{x}{3})sin\frac{x}{3}dx
+    =\int\limits_0^\pi 3t^2-3dt
+    =t^3-3x \bigg|_0^\pi
+    =cos^3(\frac{x}{3})-3cos(\frac{x}{3}) \bigg|_0^\pi=$\\
+    $=1-3-(\frac{1}{2})^3+\frac{3}{2}
+    =-\frac{16}{8}-\frac{1}{8}+\frac{12}{8}
+    =-\frac{5}{8}$\\
+    $t=cos\frac{x}{3}$\\
+    $-3dt=sin(\frac{x}{3})dx$\\\\
+    \section{вариант}
+    1) Найти интеграл $\int (\frac{x+2}{6})^2dx$, сделав замену переменной $x=6t-2$\\
+    $\int (\frac{x+2}{6})^2dx
+    =\frac{1}{36}\int (x+2)^2dx
+    =6\int t^2dt
+    =2t^3+C
+    =2(\frac{x+2}{6})^3+C$\\
+    $x=6t-2$\\
+    $t=\frac{x+2}{6}$\\
+    $dx=6dt$\\\\
+    2) Найти одну из перевообразных функция $e^{\frac{1-x}{2}}$\\
+    $\int e^{\frac{1-x}{2}}dx
+    =-2\int e^t dt
+    =-2e^\frac{1-x}{2}+C$\\
+    $t=\frac{1-x}{2}$\\
+    $dt=-\frac{1}{2}dx$\\
+    $dx=-2dt$\\\\
+    3)
+    $\int \frac{xdx}{\sqrt{x^4+1}}
+    =\frac{1}{2}\int \frac{dt}{\sqrt{t^2+1}}
+    =\frac{1}{2} ln|t+\sqrt{t^2+1}|
+    =\frac{1}{2} ln|x^2+\sqrt{x^4+1}|+C$\\
+    $t=x^2$\\
+    $dt=2xdx$\\
+    $xdx=\frac{dt}{2}$\\\\
+    4)
+    $\int\limits_{1/e}^e \frac{1}{x^2}ln(x)dx
+    =-\frac{1}{x}lnx$\\
+    $u=ln(x)$\\
+    $du=\frac{1}{x}dx$\\
+    $dv=\frac{dx}{x^2}$\\
+    $v=-\frac{1}{x}$\\
 \end{document}
