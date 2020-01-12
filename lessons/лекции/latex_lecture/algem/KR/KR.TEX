@@ -1,0 +1,308 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage[english,russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{tabto}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage[left=25mm, top=20mm, right=10mm, bottom=10mm, nohead, nofoot]{geometry}
+\begin{document}
+    \begin{center} 
+        \LARGE Подготовка к контрольно работе.\\
+    \end{center}
+    \newpage
+    \section{вариант}
+    1. Верно ли, что матрица 
+    $B=\begin{pmatrix}
+        1&0&0\\
+        0&-1&0\\
+        0&0&1
+    \end{pmatrix}$
+    является обратной для матрицы
+    $A=\begin{pmatrix}
+        1&0&0\\
+        0&-1&0\\
+        0&0&-1
+    \end{pmatrix}$?\\
+    $A^{-1}=\frac{1}{|A|}A^T$\\
+    $A^{-1}=-1
+    \begin{pmatrix}
+        1&0&0\\
+        0&-1&0\\
+        0&0&-1
+    \end{pmatrix}=
+    \begin{pmatrix}
+        -1&0&0\\
+        0&1&0\\
+        0&0&1
+    \end{pmatrix}$\\
+    Ответ: не является.\\\\
+    2)$A=\begin{pmatrix}
+        0&0&1\\
+        2&1&0\\
+        1&0&0
+    \end{pmatrix}.A^{-1}=?$\\
+    $A^{-1}=
+    \begin{pmatrix}
+        0   &0  &1\\
+        0   &1  &-2\\
+        1   &0  &0
+    \end{pmatrix}$\\\\
+    3)Решить матричное уравнение $AX=B$, где
+    $A=\begin{pmatrix}
+        2&2\\
+        -1&1
+    \end{pmatrix}$,
+    $B=\begin{pmatrix}
+        10&6\\
+        -5&1
+    \end{pmatrix}$.\\
+    $X=A^{-1}B$\\
+    $A^{-1}=
+    \begin{pmatrix}
+        \frac{1}{4}&-\frac{1}{2}\\
+        \frac{1}{4}&\frac{1}{2}
+    \end{pmatrix}$\\
+    $X=
+    \begin{pmatrix}
+        \frac{1}{4}&-\frac{1}{2}\\
+        \frac{1}{4}&\frac{1}{2}
+    \end{pmatrix}
+    \begin{pmatrix}
+        10&6\\
+        -5&1
+    \end{pmatrix}=
+    \begin{pmatrix}
+        5&1\\
+        0&2
+    \end{pmatrix}$\\\\
+    4)Методом элементарных преобразований найти ранг матрицы
+    $\begin{pmatrix}
+        2&-1&3&-2\\
+        4&-2&5&1\\
+        2&-1&1&8
+    \end{pmatrix}$\\
+    $\begin{pmatrix}
+        2&-1&3&-2\\
+        4&-2&5&1\\
+        2&-1&1&8
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        2&-1&3&-2\\
+        0&0&3&-15\\
+        2&-1&1&8
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        0&0 &2&-10\\
+        0&0&3&-15\\
+        2&-1&1&8
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        2&-1&1&8\\
+        0&0&2&-10\\
+        0&0&3&-15
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        2&-1&1&13\\
+        0&0&2&0\\
+        0&0&3&0
+    \end{pmatrix}
+    $\\
+    Ответ:ранг=2\\
+    5) Решить по правилу Крамера систему
+    $\begin{cases}
+        x+2y=-3\\
+        3x+y=1\\
+    \end{cases}$\\
+    $
+    \Delta=
+    \begin{pmatrix}
+        1&2\\
+        3&1\\
+    \end{pmatrix}
+    =-5  
+    $\\
+    $
+    \Delta_1=
+    \begin{pmatrix}
+        -3&2\\
+        1&1\\
+    \end{pmatrix}
+    =-5  
+    $\\
+    $
+    \Delta_2=
+    \begin{pmatrix}
+        1&-3\\
+        3&1\\
+    \end{pmatrix}
+    =10
+    $\\
+    $x=\frac{\Delta_1}{\Delta}=\frac{-5}{-5}=1$\\
+    $y=\frac{\Delta_2}{\Delta}=\frac{10}{-5}=-2$\\
+    6)Методом Жордана-Гаусса найти общее решение системы
+    $\begin{cases}
+        2x-y+3z=0\\
+        3x+2y-z=0\\
+    \end{cases}$\\
+    $\begin{pmatrix}
+        2&-1&3&|0\\
+        3&2&-1&|0\\
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        2&-1&3&|0\\
+        0&7/2&-11/2&|0\\
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        1&-1/2&3/2&|0\\
+        0&7/2&-11/2&|0\\
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        1&-1/2&3/2&|0\\
+        0&1&-11/7&|0\\
+    \end{pmatrix} \sim
+    \\\sim
+    \begin{pmatrix}
+        1&0&5/7&|0\\
+        0&1&-11/7&|0\\
+    \end{pmatrix} \sim
+    $\\
+    $z=C$\\
+    $\begin{cases}
+        $z=C$\\
+        x+5/7C=0\\
+        y-11/7C=0\\
+    \end{cases}$\\
+    $\begin{cases}
+        z=7C\\
+        x=-5C\\
+        y=11C\\
+    \end{cases}$\\
+    Ответ:x=7C,y=11C,z=7C\\
+    7)Методом Жордана-Гаусса найти общее решение системы
+    $\begin{cases}
+        x+2y-z=3\\
+        3x-y+2z=2\\
+    \end{cases}$\\
+    $\begin{pmatrix}
+        1&2&-1&|3\\
+        3&-1&2&|2\\
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        1&2&-1&|  3\\
+        0&-7&5&|-7\\
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        1&2&-1&|3\\
+        0&1&-5/7&|1\\
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        1&0&3/7&|1\\
+        0&1&-5/7&|1\\
+    \end{pmatrix}
+    $\\
+    $\begin{cases}
+        z=7C\\
+        x+3C=1\\
+        y-5C=1\\
+    \end{cases}$\\
+    $\begin{cases}
+        z=7C\\
+        x=1-3C\\
+        y=1+5C\\
+    \end{cases}$\\
+    Ответ:x=1-3C, y=1+5C, z=7C\\
+    \section{вариант}
+    1)Являются ли строки матрицы 
+    $\begin{pmatrix}
+        1&2&3\\
+        2&4&8\\
+        3&5&7\\
+        7&9&5\\
+    \end{pmatrix}$
+    линейно зависимыми?\\
+    Ответ: да, так как размерность векторов меньше количества векторов.\\
+    2)$A=\begin{pmatrix}
+        -1&0&0\\
+        0&0&2\\
+        1&-1&1\\
+    \end{pmatrix}
+    A^{-1}=?$\\
+    $A^{-1}=-\frac{1}{2}
+    \begin{pmatrix}
+        -1&0&0\\
+        0&0&2\\
+        1&-1&1\\
+    \end{pmatrix}^T
+    =-\frac{1}{2}
+    \begin{pmatrix}
+        2&2&0\\
+        0&-1&-1\\
+        0&2&0\\
+    \end{pmatrix}
+    =-\frac{1}{2}
+    \begin{pmatrix}
+        2&0&0\\
+        2&-1&2\\
+        0&-1&0\\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        -1&0&0\\
+        -1&1/2&-1\\
+        0&1/2&0\\
+    \end{pmatrix}
+    $\\
+    3) Методом элементарных преобразований найти ранг матрицы
+    $\begin{pmatrix}
+        1&3&5&-1\\
+        2&-1&-3&4\\
+        4&5&1&2\\
+    \end{pmatrix}$\\
+    $\begin{pmatrix}
+        1&3&5&-1\\
+        2&-1&-3&4\\
+        4&5&1&2\\
+    \end{pmatrix} \sim
+    \begin{pmatrix}
+        1&3&5&-1\\
+        0&-7&-13&6\\
+        4&5&1&2\\
+    \end{pmatrix}\sim
+    \begin{pmatrix}
+        1&3&5&-1\\
+        0&-7&-13&6\\
+        0&-7&-19&6\\
+    \end{pmatrix}\sim
+    \begin{pmatrix}
+        1&3&5&-1\\
+        0&-7&-13&6\\
+        0&0&-6&0\\
+    \end{pmatrix}
+    $\\
+    Ответ: ранг матрицы-3.\\
+    4)Решить по правилу Крамера систему 
+    $\begin{cases}
+        2x+7y=3\\
+        x-3y=8\\
+    \end{cases}$.\\
+    $\Delta=
+    \begin{pmatrix}
+        2&7\\
+        1&-3\\
+    \end{pmatrix}=-13\\
+    \Delta_{1}=
+    \begin{pmatrix}
+        3&2\\
+        8&1\\
+    \end{pmatrix}=-13\\
+    \Delta_2=
+    \begin{pmatrix}
+        7&3\\
+        -3&8\\
+    \end{pmatrix}=65\\
+    x=\frac{\Delta_1}{\Delta}=1\\
+    y=\frac{\Delta_2}{\Delta}=-5\\
+    $
+\end{document}
