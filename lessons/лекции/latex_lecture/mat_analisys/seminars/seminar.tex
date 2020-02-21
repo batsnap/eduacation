@@ -1,0 +1,95 @@
+\documentclass[a4paper,11pt,twoside]{book}
+\usepackage{graphicx}
+\usepackage[english,russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\pgfplotsset{compat=1.9}
+\begin{document}
+%\begin{tikzpicture}
+%\begin{axis}[
+%	title = Exponenta,
+%	xlabel = {$x$},
+%	ylabel = {$y$},
+%	minor tick num = 2]
+%\addplot[blue] {e^x};
+%\end{axis}
+%\end{tikzpicture}
+%\end{document}%
+%\pgfplotsset{compat=1.9}
+
+    \begin{center}
+        \LARGE Mathematical analysis
+    \end{center}
+    \newpage
+    \begin{center}
+        \LARGE Seminar-1\\
+        \LARGE Function of several variables\\
+    \end{center}
+    1)Найти и пострить область опеределяения функции.\\
+    $z=\sqrt{9-x^2-y^2}$\\
+    $9-x^2-y^2=>0\\
+    x^2+y^2<=9\\$
+    D(z) все точки лежащие внутри окружности и на самой окружности.\\
+    2)$z=\sqrt{x^2+y^2-16}\\
+    x^2+y^2>=16\\$
+    D(z) все точки лежащие вне окружности и на самой окружности.\\
+    3)$z=ln(-x-y)\\
+    -x-y>0\\
+    x+y<0\\
+    y<-x$
+    D(z) все точки лежащие ниже прямой y=-x.\\
+    4)$z=arcsin(\frac{x}{y^2})$\\
+    $\begin{cases}
+        y \neq 0\\
+        \frac{x}{y^2}>=-1\\
+        \frac{x}{y^2}<=1\\
+    \end{cases}$\\
+    $\begin{cases}
+        y \neq 0\\
+        x>=-y^2\\
+        x<=y^2\\
+    \end{cases}$\\
+    5) Построить график функции двух переменных $z=x^2+\frac{y^2}{4}$\\
+    \begin{tikzpicture}
+    \begin{axis}[ 
+        view={200}{10}, 
+        colormap/greenyellow,
+        colorbar 
+    ]
+    \addplot3[surf] {x^2+(y^2)/4};
+    \end{axis}
+    \end{tikzpicture}\\
+    6)Найти множество значений функции.\\
+    $u=x^2+y^2+z^2-4x+6y+2z\\
+    E(y)-?\\
+    u=(x-2)^2-4+(y+3)^2-9+(z+1)^2-14\\
+    E(y)=[-14;+\inf)$\\
+    7)Найти значение функции $z=sin(2x-y)$\\
+    $z(0;\frac{\pi}{2});z(\frac{\pi}{4};-\frac{\pi}{6});\\
+    z=sin(-\frac{\pi}{2})=-1\\
+    z=sin(\frac{2\pi}{3})=\frac{\sqrt{3}}{2}$\\
+    8)Найти частные производные $z'_x,z'_y$\\
+    $z=xy+\frac{y}{x}$\\
+    $z'_x=y-\frac{y}{x^2}\\
+    z'_y=x+\frac{1}{x}$\\
+    9)$z=x^{-xy}\\
+    z'_y=-x^2e^{-xy}\\
+    z'_x=e^{-xy}-xye^{-xy}$\\
+    10)$z=y^x\\
+    z'_x=y^xln(y)\\
+    z'_y=xy^{x-1}$\\
+    11)$z=\frac{y}{x}-\frac{x}{y}\\
+    z'_x=-\frac{y}{x^2}-\frac{1}{y}\\
+    z'_y=-xy^{-2}+x^{-1}$\\
+    12)$z=(x+y)e^{xy}\\
+    dz=z'_xdx+z'_ydy\\
+    z'_x=(x+y)'e^{xy}+(x+y)(e^{xy})'\\
+    =e^xy+(x+y)e^{xy}y\\
+    =e^{xy}(1+(x+y)y)\\
+    z'_y=e^{xy}(1+(xy)y)\\
+    dz=e^{xy}(1+(x+y)y)dx+e^{xy}(1+(xy)y)dy$\\
+    13)$u=\frac{x}{y}e^z\\
+    du-?$
+\end{document}
