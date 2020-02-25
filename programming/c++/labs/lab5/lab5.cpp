@@ -15,7 +15,7 @@ void print(int **matrix,int n,int m)
     for(int i=0;i<n;i++)
     {
         for(int j=0;j<m;j++)
-            cout<<matrix[i][j]<<"\t";
+            cout<<matrix[i][j]<<"\t";           
         cout<<endl;
     }
     cout<<endl;
@@ -27,27 +27,7 @@ void print(int arr[],int k)
         cout<<arr[i]<<"\t";
     cout<<endl;
 }
-/*
-void updiag(int mas[],int k,int **matrix,int n,int m)
-{
-    int c=0;
-    if (n>m or n==m)
-        for(int i=0;i<m-1;i++)
-            for(int j=0;j<m-i-1;j++)
-            {
-                mas[c]=matrix[j][j+1+i];
-                c++;
-            }
-    else
-    {
-        for(int i=0;i<n;i++)
-            for(int j=0;j<n-i;j++)
-            {
-                mas[c]=matrix[j][j+1+i];
-                c++;
-            }
-    }
-}*/
+
 void Sred_arif(int **matrix,int n,int m)
 {
     int s=0,kol=0,kol2=0;
@@ -125,5 +105,7 @@ int main()
     change_matrix(matrix,n,m);
     cout<<"Сумма главной диагонали:"<<sum_main_diag(matrix,n)<<endl;
     print(matrix,n,m);
+    delete matrix,a;
+    cout<<"Память очищена"<<endl;
     return 0;
 }
