@@ -1,8 +1,9 @@
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-
+ofstream fout("file.txt");
 void Zapolnenie(int **mat,int n,int m)
 {
     for(int i=0;i<n;i++)
@@ -12,20 +13,31 @@ void Zapolnenie(int **mat,int n,int m)
 void print(int **matrix,int n,int m)
 {
     cout<<endl<<"Исходная матрица:"<<endl;
+    fout<<endl<<"Исходная матрица:"<<endl;
     for(int i=0;i<n;i++)
     {
         for(int j=0;j<m;j++)
+        {
             cout<<matrix[i][j]<<"\t";           
+            fout<<matrix[i][j]<<"\t";           
+        }
         cout<<endl;
+        fout<<endl;
     }
     cout<<endl;
+    fout<<endl;
 }
 void print(int arr[],int k)
 {
     cout<<"Итоговый массив:"<<endl;
+    fout<<"Итоговый массив:"<<endl;
     for(int i=0;i<k;i++)
+    {
         cout<<arr[i]<<"\t";
+        fout<<arr[i]<<"\t";
+    }
     cout<<endl;
+    fout<<endl;
 }
 
 void Sred_arif(int **matrix,int n,int m)
@@ -43,9 +55,11 @@ void Sred_arif(int **matrix,int n,int m)
             }
         }
         cout<<"Количество неотрицательных элементов в первой строке="<<kol2<<endl;
+        fout<<"Количество неотрицательных элементов в первой строке="<<kol2<<endl;
         kol2=0;
     }
     cout<<"Среднее арифметической неотрицательных элементов данной матрицы="<<s/kol<<endl;
+    fout<<"Среднее арифметической неотрицательных элементов данной матрицы="<<s/kol<<endl;
 }
 bool MaxofArray(int a[],int m,int k,int c)
 {
@@ -104,6 +118,7 @@ int main()
     print(a,n);
     change_matrix(matrix,n,m);
     cout<<"Сумма главной диагонали:"<<sum_main_diag(matrix,n)<<endl;
+    fout<<"Сумма главной диагонали:"<<sum_main_diag(matrix,n)<<endl;
     print(matrix,n,m);
     delete matrix,a;
     cout<<"Память очищена"<<endl;
