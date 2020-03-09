@@ -4,24 +4,26 @@ using namespace std;
 
 class base
 {
-    private:
-        int *ma=new int[10];
     public:
-        int *mas = this->ma;
+    base()
+    {
+
+    }
+        int *mas=new int[10];
     virtual void print()
         {
             for(int i=0;i<10;i+=2)
                 cout<<mas[i]<<"\t";
             cout<<endl;
         }
-    ~base()
-    {
-        delete [] mas;
-    }
 };
 class nobase: public base
 {
+    
     public:
+    nobase()
+    {   
+    }
     void print() override
         {
             for(int i=1;i<10;i+=2)
@@ -29,10 +31,10 @@ class nobase: public base
             cout<<endl;
         }
 };
-void create(vector<base*> &mas)
+void create(vector<base*> &mas1)
 {
-    mas.push_back(new base);
-    mas.push_back(new nobase);
+    mas1.push_back(new base);
+    mas1.push_back(new nobase);
 }
 void init(vector<base*> mas1)
 {
@@ -48,14 +50,13 @@ void init(vector<base*> mas1)
             k=100;
         }
 }
-void del(vector<base*> mas)
+void del(vector<base*> &mas)
 {
-    for(int i=0;i<mas.size();i++)
+    for(int i=0;mas.size();i++)
         delete mas[i];
 }
 int main()
 {
-    cout<<"nachalo"<<endl;
     vector<base*> mas;
     create(mas);
     init(mas);

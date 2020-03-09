@@ -14,7 +14,8 @@ class kurbanov
         }
         ~kurbanov()
         {
-            delete i,i1;
+            delete i;
+            delete i1;
         }
 };
 class Batyr : public kurbanov
@@ -29,7 +30,8 @@ class Batyr : public kurbanov
         }
         ~Batyr()
         {
-            delete i1,i;
+            delete i1;
+            delete i;
         }
 };
 
