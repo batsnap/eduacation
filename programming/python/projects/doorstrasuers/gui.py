@@ -1,15 +1,79 @@
 from tkinter import *  
 from time import sleep
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.keys import Keys
 def gen_string(l):
     k=''
     for i in range(len(l)):
         k+=l[i]+'\n'
     return k
+def start():
+    global a
+    opts = Options()
+    opts.set_headless()
+    assert opts.headless
+    a=webdriver.Firefox(options=opts)
+    a.get("http://www.doors-treasures.ru/start.aspx")
+    elem=a.find_element_by_name("tbLogin")
+    elem.send_keys("batsnap")
+    elem=a.find_element_by_name("tbPassword")
+    elem.send_keys("112001Batkur",Keys.ENTER)
+    result.config(text='вход выполнен')
+    window.update()
+def get_num_lobby():
+    global a
+    k=str(noumber.get())
+    c='http://www.doors-treasures.ru/gamelogs.aspx?gameid='+k
+    a.get(c)
+    check()
 
-'''def click():
-    for i in range(10):
-        lbl.config(text=i,font='times 25')
-        window.update()'''
+def check():
+    global a
+    log=a.find_elements_by_class_name("pointer")
+    while True:
+        log=a.find_elements_by_class_name("pointer")
+        for i in range(len(log)):
+            if log[i].text in namemonstrs:
+                del monstrs[namemonstrs.index(log[i].text)]
+                del namemonstrs[namemonstrs.index(log[i].text)]
+            elif log[i].text in nameboost:
+                del boost[nameboost.index(log[i].text)]
+                del nameboost[nameboost.index(log[i].text)]
+            elif log[i].text in namerasy:
+                del rasy[namerasy.index(log[i].text)]
+                del namerasy[namerasy.index(log[i].text)]
+            elif log[i].text in nameproklyatie:
+                del proklyatie[nameproklyatie.index(log[i].text)]
+                del nameproklyatie[nameproklyatie.index(log[i].text)]
+            elif log[i].text in namelevel:
+                del level[namelevel.index(log[i].text)]
+                del namelevel[namelevel.index(log[i].text)]
+            elif log[i].text in nameshmot:
+                del shmot[nameshmot.index(log[i].text)]
+                del nameshmot[nameshmot.index(log[i].text)]
+            elif log[i].text in namedoor:
+                del door[namedoor.index(log[i].text)]
+                del namedoor[namedoor.index(log[i].text)]
+            else:
+                pass
+        testlbl1.config(text=gen_string(monstrs))
+        testlbl2.config(text=gen_string(namemonstrs))
+        testlbl3.config(text=gen_string(boost))
+        testlbl4.config(text=gen_string(nameboost))
+        testlbl5.config(text=gen_string(rasy))
+        testlbl6.config(text=gen_string(namerasy))
+        testlbl7.config(text=gen_string(proklyatie))
+        testlbl8.config(text=gen_string(nameproklyatie))
+        testlbl9.config(text=gen_string(level))
+        testlbl10.config(text=gen_string(namelevel))
+        testlbl11.config(text=gen_string(shmot))
+        testlbl12.config(text=gen_string(nameshmot))
+        testlbl13.config(text=gen_string(door))
+        testlbl14.config(text=gen_string(namedoor))
+        window.update()
+        sleep(0)
+
 monstrs=['Монстры 1 уровня','Монстры 1 уровня','Монстры 1 уровня','Монстры 1 уровня','Монстры 1 уровня','Монстры 10 уровня','Монстры 10 уровня','Монстры 10 уровня','Монстры 12 уровня','Монстры 12 уровня','Монстры 12 уровня','Монстры 14 уровня','Монстры 14 уровня','Монстры 16 уровня','Монстры 16 уровня','Монстры 16 уровня','Монстры 16 уровня','Монстры 18 уровня','Монстры 18 уровня','Монстры 2 уровня','Монстры 2 уровня','Монстры 2 уровня','Монстры 2 уровня','Монстры 2 уровня','Монстры 20 уровня','Монстры 4 уровня','Монстры 4 уровня','Монстры 4 уровня','Монстры 4 уровня','Монстры 6 уровня','Монстры 6 уровня','Монстры 6 уровня','Монстры 6 уровня','Монстры 8 уровня','Монстры 8 уровня','Монстры 8 уровня','Монстры 8 уровня']
 namemonstrs=['Калечный Гоблин','Пасюк с Кувалдой','Сочащаяся Слизь','Типа вошки','Трава в Горшке','3872 Орка','Просто Тролль','Сопливый Нос','Бигфут','Закос под Вампира','Демон с Язычком','Обдолбанный Голем','Страховой Агент','Белые Братья','Король Тут','Невыразимо Жуткий Неописуемый Ужас','Гиппогриф','Бульрог','Кальмадзилла','Г-н Кости','Летучие Лягушки','Питбуль','Здоровенная Бешеная Цыпа','Желатиновый Октаэдр','Плутониевый Дракон','Гарпистки','Лепрекон','Наскипидаренные Улитки','Неживой Коник','Адвокат','Дотошный Ботан','Рыгачу','Утикора','Амазонка','Бабыри','Газебо','Лицесос']
 boost=['Усилители монстров','Усилители монстров','Зелье5','Зелье5','Усилители монстров','Зелье2','Усилители монстров','Зелье5','Зелье2','Зелье2','Усилители монстров','Зелье3','Зелье2','Зелье2','Зелье3','Зелье3']
@@ -51,19 +115,19 @@ testlbl7=Label(window,text=gen_string(proklyatie),font='Times 10')
 testlbl7.grid(column=2,row=3)
 
 type5=Label(window,text=typename,font='Times 8')
-type5.grid(column=8,row=0)
+type5.grid(column=4,row=0)
 testlbl9=Label(window,text=gen_string(level),font='Times 10')
-testlbl9.grid(column=8,row=1)
+testlbl9.grid(column=4,row=1)
 
 type6=Label(window,text=typename,font='Times 8')
-type6.grid(column=10,row=0)
+type6.grid(column=6,row=0)
 testlbl11=Label(window,text=gen_string(shmot),font='Times 10')
-testlbl11.grid(column=10,row=1)
+testlbl11.grid(column=6,row=1)
 
 type7=Label(window,text=typename,font='Times 8')
-type7.grid(column=12,row=0)
+type7.grid(column=8,row=0)
 testlbl13=Label(window,text=gen_string(door),font='Times 10')
-testlbl13.grid(column=12,row=1)
+testlbl13.grid(column=8,row=1)
 
 
 
@@ -88,19 +152,34 @@ testlbl8=Label(window,text=gen_string(nameproklyatie),font='Times 10')
 testlbl8.grid(column=3,row=3)
 
 name5=Label(window,text=namecard,font='Times 8')
-name5.grid(column=9,row=0)
+name5.grid(column=5,row=0)
 testlbl10=Label(window,text=gen_string(namelevel),font='Times 10')
-testlbl10.grid(column=9,row=1)
+testlbl10.grid(column=5,row=1)
 
 name6=Label(window,text=namecard,font='Times 8')
-name6.grid(column=11,row=0)
+name6.grid(column=7,row=0)
 testlbl12=Label(window,text=gen_string(nameshmot),font='Times 10')
-testlbl12.grid(column=11,row=1)
+testlbl12.grid(column=7,row=1)
 
 name7=Label(window,text=namecard,font='Times 8')
-name7.grid(column=13,row=0)
+name7.grid(column=9,row=0)
 testlbl14=Label(window,text=gen_string(namedoor),font='Times 10')
-testlbl14.grid(column=13,row=1)
+testlbl14.grid(column=9,row=1)
 
 
+
+
+
+btn=Button(window,text='start',command=start)
+btn.grid(column=7,row=4)
+result=Label(window,text='вход не выполнен')
+result.grid(column=7,row=5)
+
+noumber=Entry(window)
+noumber.grid(column=8,row=4)
+btn2=Button(window,text='Введи номер лобби',command=get_num_lobby)
+btn2.grid(column=8,row=5)
+
+test=Label(window,text='kol-vo card',font='Times 8')
+test.grid(column=9,row=4)
 window.mainloop()

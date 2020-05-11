@@ -17,22 +17,9 @@ nameshmot=['Башмаки Могучего Пенделя','Башмаки Ре
 door=['Двери вспомогательные','Двери атакующие','Двери вспомогательные','Сокровища вспомогательные','Сокровища вспомогательные','Двери атакующие','Сокровища вспомогательные','Сокровища вспомогательные','Сокровища вспомогательные','Сокровища вспомогательные','Двери атакующие','Двери вспомогательные','Сокровища вспомогательные','Сокровища вспомогательные','Сокровища вспомогательные','Двери вспомогательные','Двери защитные','Двери атакующие','Двери защитные','Сокровища вспомогательные','Сокровища вспомогательные']
 namedoor=['Божественное Вмешательство','Бродячая Тварь','Чит','Читерский Кубик','Дупельгангер','Гадкая Парочка','Хотельное Кольцо','Хотельное Кольцо','Наемничек','Наколенники Развода','Бродячая Тварь','Помоги Себе Сам!','Стенка-встанька','Штырь Лозоходца','Тюбик Клея','Ура, клад!','Ушел на базу','Заморок','Зелье Дружбы','Зелье Невидимости','Зелье Стрелочника']
 
-def start():
-    global a
-    opts = Options()
-    opts.set_headless()
-    assert opts.headless
-    a=webdriver.Firefox(options=opts)
-    a.get("http://www.doors-treasures.ru/start.aspx")
-    elem=a.find_element_by_name("tbLogin")
-    elem.send_keys("batsnap")
-    elem=a.find_element_by_name("tbPassword")
-    elem.send_keys("112001Batkur",Keys.ENTER)
+
 def open_log():
-    global a
-    k=str(input('Номер Лобби:'))
-    c='http://www.doors-treasures.ru/gamelogs.aspx?gameid='+k
-    a.get(c)
+    
 def cards():
     global a
     log=a.find_elements_by_class_name("pointer")
@@ -55,7 +42,7 @@ def print_log():
     log1=a.find_elements_by_class_name("pointer")
     for i in range(len(log1)):
         print(log1[i].text)
-j=True
+'''j=True
 while j:
     print('Выберете действие:\n1)Запустить \n2)Количество карт\n3)открыть лог\n4)закрыть\n5)live log\n6)all log')
     try:
@@ -74,4 +61,4 @@ while j:
         elif b==6:
             print_log()
     except:
-        pass
+        pass'''
