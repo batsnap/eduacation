@@ -1,0 +1,194 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage[english,russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{tabto}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage[left=25mm, top=20mm, right=10mm, bottom=10mm, nohead, nofoot]{geometry}
+\begin{document}
+    \begin{center} 
+        \LARGE МАтан\\
+        \LARGE диффуры\\
+    \end{center}
+    \newpage
+    №51\\
+    $xydx+(x+1)dy=0\\
+    \frac{y}{dy}=-\frac{x+1}{xdx}\\
+    -\frac{xdx}{x+1}=\frac{dy}{y}\\
+    -\int\frac{xdx}{x+1}=\int\frac{dy}{y}\\
+    -ln(x+1)+x+1=ln(y)+C\\$
+    №52\\
+    $\sqrt{y^2+1}dx=xydy\\
+    \frac{dx}{x}=\frac{ydy}{\sqrt{y^2+1}}\\
+    ln(x)=\sqrt{y^2+1}+C\\$
+    №55\\
+    $y'=\\
+    \frac{dy}{dx}=3\sqrt[3]{y^2}\\
+    \frac{dy}{3\sqrt[3]{y^2}}=dx\\
+    \frac{1}{3}\int{\frac{dy}{y^{\frac{2}{3}}}}=\int dx\\
+    \sqrt[3]{y}=x+C\\$
+    №60\\
+    $\frac{dz}{dx}=10^x 10^z\\
+    \frac{dz}{10^z}=10^xdx\\
+    \frac{10^z}{ln(10)}=-\frac{1}{ln(10)10^x}\\
+    10^z=-\frac{1}{10^x}\\$
+    №137\\
+    $(2x+1)y'=4x+2y\\$
+    решение однородного:\\
+    $(2x+1)y'-2y=0\\
+    \frac{1}{2}\frac{dy}{y}=\frac{1}{2}(\frac{dx}{x+\frac{1}{2}})\\
+    \frac{dy}{2y}=\frac{dx}{2x+1}\\
+    ln(y)=ln(x+\frac{1}{2})+ln(C)\\
+    y=C(x+\frac{1}{2})\\
+    (x+\frac{1}{2})(C'(x+\frac{1}{2})+C)-C(x+\frac{1}{2})=2x\\
+    C'(x+\frac{1}{2})^2=2x\\
+    dC=\frac{2xdx}{(x+\frac{1}{2})^2}\\
+    C=2(ln(2x+1)+\frac{1}{2x+1})+C_2\\
+    y=(2(ln(2x+1)+\frac{1}{2x+1})+C_2)(x+\frac{1}{2})\\$
+    №139\\
+    $(xy+e^x)dx-xdy=0\\
+    xy-xy'=-e^x\\$
+    решение однородного\\
+    $xy-xy'=0\\
+    dx=\frac{dy}{y}\\
+    x=ln(y)-ln(C)\\
+    y=Ce^x\\
+    xCe^x-xC'e^x-xCe^x=-e^x\\
+    xC'=1\\
+    dC=\frac{dx}{x}\\
+    C=ln(x)+C_2\\
+    y=(ln(x)+C_2)e^x\\$
+    №140\\
+    $x^2y'+xy+1=0\\$
+    Решение однородного\\
+    $y'+\frac{y}{x}=0\\
+    \frac{dy}{y}=-\frac{dx}{x}\\
+    ln(y)=-ln(x)+ln(C)\\
+    y=\frac{C}{x}\\
+    C'x-C+C+1=0\\
+    dC=-\frac{dx}{x}\\
+    C=-ln(x)+C_2\\
+    y=\frac{-ln(x)+C_2}{x}\\$
+    \newpage
+    1)уравнение вида $F(x,y,y')=0$ можно решать двумя методами\\
+    \begin{tabbing}
+        a)разрешшить уравнение относительно y', то есть из уравниея F(x,y,y')=0 выразить y' черех x и y
+        таким образом\\
+        получится одно или несколько уравний вида y'=f(x,y) и каждое из них нужно решить.\\
+        б) метод введение параметра. Пусть уравение F(x,y,y')=0 можно разрешить относительно y, то есть записать
+        \\ввиде y=f(x,y')\\
+    \end{tabbing}
+    Вводим параметр p=y' отсюда следует y=f(x,p)\\
+    Прихоим к уравнению вида M(x,p)dx+N(x,p)dp=0\\
+    Если решение этого ур $x=\phi(p)\\$    
+    Диффиренциал-
+    $x=\phi(p)\\
+    y=f(\phi(p),p)\\$
+    Пример:\\
+    $y=x+y'-ln(y')\\
+    p=y'\\
+    y=x+p-ln(p)\\
+    dy=dx+dp-\frac{dp}{p}\\
+    pdx=dx+dp-\frac{dp}{p}\\
+    dx(p-1)=dp(1-\frac{1}{p})\\
+    p\not=1;\\
+    dx=\frac{dp}{p}\\
+    x=ln(p)+C\\
+    p=Ce^x\\
+    y=ln(p)+C+p-ln(p)\\
+    y=C+p\\
+    y=C+Ce^x\\
+    y=C(e^x+1)\\
+    p=1\\
+    y=x+1\\$
+    Дискрименантная кривая-\\
+    решение $y=\phi(x)$ уравнения $F(x,y,y')=0$ называется особым если через каждую точку, кроме этого решения проходит и другое решение, имеющее в этой точке ту же касательную, что и решение $y=\phi(x)$, но не совпадющее с ним в сколько угодно малой окерсности этой точке.\\
+    Если функция $F(x,y,y')$ и прозводная $\frac{\partial f}{\partial y}$ и производная $\frac{\partial f}{\partial y'}$ непрерывна то любое особое решение уравнения $F(x,y,y')=0$ удовлетворяет также уравению $\frac{\partial F(x,y,y')}{\partial y'}=0$\\
+
+    Пример 2: найти особое решение уравнения\\
+    $y=x+y'-ln(y')\\
+    0=1-\frac{1}{y'}\\
+    y'=1\\
+    y=x+1\\
+    y_1(x_0)=y_2(x_0)\\
+    y_1'(x_0)=y_2'(x_0)\\
+    x+1=e^{x-C}+C\\
+    1=e^{x-C}\\
+    x_0=C\\
+    C+1=1+C\\$
+    Пример 3:\\
+    $(y')^2-y^2=0\\
+    y'=p\\
+    p^2-y^2=0\\
+    pdp=ydxp\\
+    p\not=0\\
+    \frac{dp}{dx}=y\\
+    p=\frac{dp}{dx}\\
+    x=ln(p)+C\\
+    p=e^{x-C}\\
+    y'=e^{x-C}\\
+    (e^{x-C})^2-y^2=0\\
+    y=e^{\pm x-C}\\$
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    \newpage
+    Задача коши\\
+    $\begin{cases}
+        \frac{dy}{dx}+\rho(x)y(x)=0\\
+        y(x_0)=y_0\\
+    \end{cases}$\\
+    доп условие, которое делает диффур корректным как задачу.\\
+    Корректность\\
+    1) решение существует\\
+    2) решение единственно\\
+    3) решение не сильно изменяется от изменния входных данных(решение непрерывно зависит от данных в некоторой разумной топологии)\\\\
+
+    $Cx^2+2=2Cy\\
+    4C+2=2C\\
+    C=-\frac{1}{2}\\$\\
+    $\begin{cases}
+        y'+y=e^{-x}sinx\\
+        y(0)=0\\
+    \end{cases}$\\
+    $y'+y=e^{-x}sinx\\
+    \frac{dy}{dx}+y=0\\
+    ln(y)+x-ln(C)=0\\
+    y=Ce^{-x}\\
+    C'e^{-x}-Ce^{-x}+Ce^{-x}=e^{-x}sinx\\
+    C'-sinx=0\\
+    \frac{dC}{dx}=sinx\\
+    C_1=-cosx+C_2\\
+    y=(-cosx+C_2)e^{-x}\\
+    C_2=1\\$
+    Ответ:$y=(1-cosx)e^{-x}$\\\\
+    $\begin{cases}
+        y''-y'=4x\\
+        y(0)=1\\
+        y'(0)=-4
+    \end{cases}$\\
+    $y'=p\\
+    p'-p=0\\
+    \frac{dp}{dy}=p\\
+    ln(p)=y+C\\
+    p=Ce^{y}\\
+    y'=Ce^y\\
+    \frac{dy}{e^y}=Cdx\\
+    -e^{-y}=Cx+C_2\\
+    y=-ln(-Cx-C_2)\\
+    -(\frac{-C}{-Cx-C_2})'+(\frac{-C}{-Cx-C_2})=4x\\
+    \frac{-C^2}{(-Cx-C_2)^2}+\frac{-C}{-Cx-C_2}=4x$
+\end{document}
