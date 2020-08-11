@@ -1,35 +1,49 @@
 #include <iostream>  
 #include <vector>
 #include <string> 
+#include <ctime>
+#include <cstdlib>
 using namespace std; 
 class Kurbanov 
 { 
     public: 
-        string* A ; 
-        double B; 
+        float *a=new float[10]; 
+        int *b=new int[10]; 
         Kurbanov() 
         { 
-            *A = "Const"; 
-            B = 4.43; 
+            for(int i=0;i<10;i++)
+            {
+                this->a[i]=-10+rand()%21;
+                this->b[i]=-10.0+rand()%21;
+            }
         } 
         ~Kurbanov() 
         { 
-            delete A; 
+            delete[] a; 
+            delete[] b;
         } 
 }; 
 class Batyr :public Kurbanov 
 { 
     public: 
-        float* C; 
+        string* C;
+        char* D; 
         Batyr() 
         { 
-            *C = 3; 
+            this->C=new string[20]{"hello world"};
+            this->D=new char[10]{"hello"};
         } 
         ~Batyr() 
         { 
-            delete C; 
+            delete C;
+            delete D; 
         } 
-}; 
+};
+void create(vector<Kurbanov*> &a)
+{
+    a.push_back(new Kurbanov); 
+    a.push_back(new Batyr);    
+} 
 void del(vector<Kurbanov*> a) 
 { 
     for (int i=0;i<a.size(); i++) 
@@ -38,8 +52,7 @@ void del(vector<Kurbanov*> a)
 int main() 
 { 
 vector <Kurbanov*> a; 
-a.push_back(new Kurbanov); 
-a.push_back(new Batyr); 
+create(a);
 del(a); 
 return 0; 
 }
