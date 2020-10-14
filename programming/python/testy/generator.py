@@ -8,3 +8,4 @@ for i in range(y):
         c=str(b[i][j])
         print(c, end=' ')
     print()
+print('hi')

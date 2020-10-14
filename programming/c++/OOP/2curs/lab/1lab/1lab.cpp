@@ -46,75 +46,100 @@ int count_of_tech_books (vector<library*> lib) //function count of techical_book
 	for(int i=0;i<lib.size();i++)
 	{
 		if (lib[i]->type_book=="tech") 
+		{
 			k++;
+		}
 	}
 	return k;
 }
+
 int count_of_art_books (vector<library*> lib) //function count of art books
 {
 	int k=0; //amount of technical books
 	for(int i=0;i<lib.size();i++)
 	{
-		if (lib[i]->type_book=="art") 
+		if (lib[i]->type_book=="art")
+		{
 			k++;
+		}
 	}
 	return k;
 }
-/*void output_amount_of_books_switch(vector<library*> lib)
+
+void output_amount_of_books_switch(vector<library*> lib)
 {
-	string type;
-	cout<<"Select the number of the book you want to learn";getline(cin,type);
-	switch(type)
+	int type1;
+	cout<<"Select the genre of the book you want to learn\n1-tech\n2-art:\t";
+	cin>>type1;
+
+	switch(type1)
 	{
-		case "tech":
-			cout<<count_of_tech_books(lib);
+		case 1:
+			cout<<count_of_tech_books(lib)<<endl;
 			break;
-
-		case "art":
-			cout<<count_of_art_books(lib);
+		case 2:
+			cout<<count_of_art_books(lib)<<endl;
 			break;
-
 		default:
 			break;
 
 	}
-}*/
+}
 void output_amount_of_books(vector<library*> lib)
 {
 	string type;
-	cout<<"Select the number of the book you want to learn";getline(cin,type);
+	cout<<"Select the genre of the book you want to count:\t";
+	getline(cin,type);
 	if (type=="tech")
-	 	cout<<count_of_tech_books(lib);
+	{
+	 	cout<<count_of_tech_books(lib)<<endl;
+	}
 	else if (type=="art")
-
-			cout<<count_of_art_books(lib);
+	{	
+		cout<<count_of_art_books(lib)<<endl;
+	}
 	
+}
+void print_all_books(vector<library*> lib)
+{
+	for(int i=0;i<lib.size();i++)
+	{
+		cout<<lib[i]->name_author<<endl;
+		cout<<lib[i]->name_book<<endl;
+		cout<<lib[i]->type_book<<endl;
+	}
 }
 
 //main part
 int main()
 {
-	int action;
+	string action;
+	bool end=true;
 	int amount_of_books;
 	vector<library*> lib;
-	while(true)
+	while(end)
 	{
-		cout<<"Choose action:\n1)add book\n2)print amount of books(using switch)\n3)print amount of books\nprint noumber(1-3):\t";
-		cin>>action;
-		if (action==1)
+		cout<<"Choose action:\n1)Add books\n2)Print amount of books(using switch)\n3)Print amount of books\n4)End programm\nPrint noumber(1-3):\t";
+		getline(cin,action);
+		if (action=="1")
 		{
-			cout<<"input amount of books:";cin>>amount_of_books;
+			cout<<"input amount of books:\t";cin>>amount_of_books;
 			add_book(lib,amount_of_books);
 		}
-		/*else if (action==2)
+		else if (action=="2")
 		{
 			output_amount_of_books_switch(lib);
-		}*/
-		else if (action==3)
+		}
+		else if (action=="3")
 		{
 			output_amount_of_books(lib);
 		}
+		else if (action=="4")
+		{
+			end=false;
+		}
 
 	}
+
 	return 0;
 }
