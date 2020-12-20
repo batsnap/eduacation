@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Протокол игры
+</title><meta name="viewport" content="width=1024" /><meta name="format-detection" content="telephone=no" /><link rel="shortcut icon" href="/img/other/maintitleN.png" /><link rel="icon" href="/img/other/maintitleN.png" /><link href="/sources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" /><link href="/sources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" /><link href="/sources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="/sources/css/bootstrap-select.css" rel="stylesheet" />
+    <link href="/sources/own.css?v=1.1" rel="stylesheet" />
+
+    <script src="/sources/vendor/jquery/jquery.js"></script>
+    <script src="/sources/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/sources/js/bootstrap-select.js"></script>
+    <script src="/sources/js/bootbox.min.js"></script>
+
+    <script src="/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="/signalr/hubs"></script>
+</head>
+<body style="background-image:url(/img/other/mastN2.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size:cover;padding-bottom:40px;min-height:100vh;">
+    <form method="post" action="./gamelogs.aspx?gameid=37794" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="+PCy7rEbXhFXRzEonc0EA83YSQeORTTqhIaC+d19RQxATSRFT+1BYVvgHU0Avu0aXfIARgerUW6pov6bhGOZ9evMxENOJfAQ0QGSwaS3vLJSiFbPtaTyviQIRqwm38i6Fa9lrNzeR4vinvD0vl4xnJRpMcV0KwRdDijNpHb67A6mZ8GYuGEfBWzhKr3rUdRi18/IX49nnMXeTac5gvDpQmTAbheeQBUVCqtm3PslYbQ8uHKLJbqwn2LIX4YMhGE46fGRsxV+PhiAQQgWOiYSnv88TFXk2su9KiRdnFMgyna2m+xqZfOKplTnzVoMvf/aNFYJzjuxknAzkb4Edz147ZG6laZp3GKkn3TjecLxYhE=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZBvS3qthrfJABKTkSiM-Fjn62KwBMl1Us9svntRTe6VSe9Z_SZR31gpA6rhK4Q7B-g2&amp;t=637100866300000000" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="27FC7F25" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="+OpgUPZv/JOFKBAm5FtNXv9npwwKHqMzpJWUQDimXEQJgFC2tnwShpOh9PZXJqQUqAc9I4j9AG9adcNCNY95WsyFEHw83Zf7lS7HaNJsxnS8LRpbwsMv58HveYKMFV95" />
+</div>
+        <table id="tblMain" align="Center" style="width:90%;">
+	<tr>
+		<td id="tdHeaderMenu" align="center">
+                    <div><a href="/home.aspx"><img src="/img/other/maintitleN.png" width="200" /></a></div>
+                    <br /><br />
+                </td>
+	</tr><tr>
+		<td class="content_back border_rounded">
+                    <div class="text-center" style="margin:10px;margin-bottom:20px;">
+                        <button id="btnHome1" onclick="window.location.href = &#39;/home.aspx&#39;;return false;" class="default_btn">На страницу персонажа <span class='glyphicon glyphicon-share-alt' aria-hidden='true'></span></button> 
+                    </div>
+
+                    <fieldset class="border_with_title" style="min-height:150px;margin-left:2%;margin-right:2%;margin-top:0px;margin-bottom:20px;">
+                        <legend id="legendGameLink" class="fieldset_legend" style="font-weight:bold">Протокол игры <a style='color:white;' href='/game.aspx?gameid=37794'><u>№ 37794</u></a></legend><div id="divLogs" style="overflow:auto;background-color:white;padding:5px;border-radius:7px;"></div>
+                    </fieldset>
+
+                    <div class="text-center" style="margin:10px;margin-bottom:30px;">
+                        <button class='default_btn' style="width:220px;margin-right:10px;" id="btnAutoScroll" onclick="OnOffAutoScroll();return false;">Выключить автопрокрутку <span class='fa fa-spinner'></span></button> 
+                        <button id="btnHome2" onclick="window.location.href = &#39;/home.aspx&#39;;return false;" class="default_btn">На страницу персонажа <span class='glyphicon glyphicon-share-alt' aria-hidden='true'></span></button> 
+                    </div>
+                </td>
+	</tr>
+</table>
+
+        <input name="hidtok" type="hidden" id="hidtok" value="batsnap" />
+
+        <script>
+            var auto_scroll = true;
+            $(document).ready(function () {
+                $(function () {
+                    var gamelogs = $.connection.gtyuv;
+
+                    gamelogs.client.leave = function () {
+                        window.location.href = "/start.aspx";
+                    };
+                    gamelogs.client.redirect = function (pag) {
+                        window.location.href = pag;
+                    };
+                    gamelogs.client.addMessageToLog = function (html) {
+                        $('#divLogs').append(html);
+                        if (auto_scroll) $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+                    };
+                    gamelogs.client.updateHtml = function (id, html) {
+                        $("#" + id).html(html);
+                    };
+                    $.connection.hub.start().done(function () {
+                        gamelogs.server.f50(window.location.href, $("#hidtok").val(), $(window).width(), $(window).height());
+                    });
+                });
+            });
+            function OnOffAutoScroll() {
+                auto_scroll = !auto_scroll;
+                if (auto_scroll) $('#btnAutoScroll').html("Выключить автопрокрутку <span class='fa fa-spinner'></span>"); 
+                else $('#btnAutoScroll').html("Включить автопрокрутку <span class='fa fa-spinner'></span>"); 
+            }
+        </script>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+//]]>
+</script>
+</form>
+</body>
+</html>
