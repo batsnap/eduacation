@@ -5,11 +5,7 @@ void Display()
 {
 	glClearColor(1.0f,1.0f,1.0f,1.0f);
     glBegin(GL_QUADS);
-    	GLUquadricObj *q = gluNewQuadric();
-		gluQuadricDrawStyle(q, GLU_FILL);
-		glColor3f(0.0f, 0.0f, 0.0f);
-		gluCylinder(q, radius, 0, height, segments_count, segments_count);
-		gluDeleteQuadric(q);
+    	
     glEnd();
 /*
 	glBegin(GL_QUADS);
